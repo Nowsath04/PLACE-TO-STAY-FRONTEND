@@ -9,13 +9,13 @@ import {
   Stepper,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { createRoom } from "../../actions/room";
 import { useValue } from "../../context/ContextProvider";
 import AddDetails from "./addDetails/AddDetails";
 import AddImages from "./addImages/AddImage";
 import AddLocation from "./AddLocation/AddLocation";
+import { createRoom } from "../../actions/room";
 
-const AddRoom = ({setPage}) => {
+const AddRoom = ({ setPage }) => {
   const {
     state: { images, details, location, currentUser },
     dispatch,
@@ -72,7 +72,6 @@ const AddRoom = ({setPage}) => {
       return [...steps];
     });
   };
-
   useEffect(() => {
     if (findUnfinished() === -1) {
       if (!showSubmit) setShowSubmit(true);
@@ -90,9 +89,8 @@ const AddRoom = ({setPage}) => {
       description: details.description,
       images,
     };
-    createRoom(room, currentUser, dispatch,setPage);
+    createRoom(room, currentUser, dispatch, setPage);
   };
-
   return (
     <Container sx={{ my: 4 }}>
       <Stepper
@@ -109,11 +107,7 @@ const AddRoom = ({setPage}) => {
           </Step>
         ))}
       </Stepper>
-      <Box
-        sx={{
-          pb: 7,
-        }}
-      >
+      <Box sx={{ pb: 7 }}>
         {
           {
             0: <AddLocation />,
