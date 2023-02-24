@@ -19,6 +19,7 @@ const UserIcons = () => {
         <IconButton onClick={(e) => setAnchorUserMenu(e.currentTarget)}>
           <Avatar src={currentUser?.photoURL} alt={currentUser?.name}>
             {currentUser?.name?.charAt(0).toUpperCase()}
+            <span>{currentUser.name}</span>
           </Avatar>
         </IconButton>
       </Tooltip>
