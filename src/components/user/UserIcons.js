@@ -15,6 +15,9 @@ const UserIcons = () => {
 
   return (
     <Box>
+      <IconButton size="small" color="inherit">
+        <h3>{currentUser.name}</h3>
+      </IconButton>
       <Tooltip title="Open User Settings">
         <IconButton onClick={(e) => setAnchorUserMenu(e.currentTarget)}>
           <Avatar src={currentUser?.photoURL} alt={currentUser?.name}>
