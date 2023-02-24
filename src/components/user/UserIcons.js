@@ -15,7 +15,9 @@ const UserIcons = () => {
 
   return (
     <Box>
-      <h3>{currentUser.name}</h3>
+      <h3 style={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+        {currentUser.name}
+      </h3>
       <Tooltip title="Open User Settings">
         <IconButton onClick={(e) => setAnchorUserMenu(e.currentTarget)}>
           <Avatar src={currentUser?.photoURL} alt={currentUser?.name}>
